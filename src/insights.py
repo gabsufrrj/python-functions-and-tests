@@ -7,7 +7,6 @@ def get_unique_job_types(path):
     for job in jobs_list:
         jobs_types.add(job["job_type"])
     jobs_data = list(jobs_types)
-    print(jobs_data)
     return jobs_data
 
 
@@ -58,39 +57,23 @@ def filter_by_industry(jobs, industry):
 
 
 def get_max_salary(path):
-    """Get the maximum salary of all jobs
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The maximum salary paid out of all job opportunities
-    """
-    pass
+    jobs_list = src.jobs.read(path)
+    all_salaries = []
+    for salary in jobs_list:
+        if salary["max_salary"].isdigit():
+            all_salaries.append(int(salary["max_salary"]))
+    the_max_salary = int(max(all_salaries))
+    return the_max_salary
 
 
 def get_min_salary(path):
-    """Get the minimum salary of all jobs
-
-    Must call `read`
-
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The minimum salary paid out of all job opportunities
-    """
-    pass
+    jobs_list = src.jobs.read(path)
+    all_salaries = []
+    for salary in jobs_list:
+        if salary["min_salary"].isdigit():
+            all_salaries.append(int(salary["min_salary"]))
+    the_min_salary = int(min(all_salaries))
+    return the_min_salary
 
 
 def matches_salary_range(job, salary):
