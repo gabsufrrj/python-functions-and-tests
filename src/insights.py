@@ -11,21 +11,11 @@ def get_unique_job_types(path):
 
 
 def filter_by_job_type(jobs, job_type):
-    """Filters a list of jobs by job_type
-
-    Parameters
-    ----------
-    jobs : list
-        List of jobs to be filtered
-    job_type : str
-        Job type for the list filter
-
-    Returns
-    -------
-    list
-        List of jobs with provided job_type
-    """
-    return []
+    filtered_jobs = []
+    for entry in jobs:
+        if entry['job_type'] == job_type:
+            filtered_jobs.append(entry)
+    return filtered_jobs
 
 
 def get_unique_industries(path):
@@ -39,21 +29,11 @@ def get_unique_industries(path):
 
 
 def filter_by_industry(jobs, industry):
-    """Filters a list of jobs by industry
-
-    Parameters
-    ----------
-    jobs : list
-        List of jobs to be filtered
-    industry : str
-        Industry for the list filter
-
-    Returns
-    -------
-    list
-        List of jobs with provided industry
-    """
-    return []
+    filtered_industries = []
+    for entry in jobs:
+        if entry['industry'] == industry:
+            filtered_industries.append(entry)
+    return filtered_industries
 
 
 def get_max_salary(path):
