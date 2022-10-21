@@ -5,9 +5,9 @@ def get_unique_job_types(path):
     jobs_list = src.jobs.read(path)
     jobs_types = set()
     for job in jobs_list:
-        jobs_types.add(job["job_title"])
+        jobs_types.add(job["job_type"])
     jobs_data = list(jobs_types)
-    # print(jobs_data)
+    print(jobs_data)
     return jobs_data
 
 
@@ -36,7 +36,6 @@ def get_unique_industries(path):
         if industry["industry"] != "":
             industries.add(industry["industry"])
     industries_list = list(industries)
-    print(industries_list)
     return industries_list
 
 
