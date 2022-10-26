@@ -1,6 +1,6 @@
 ## Resumo 
 
-O seguinte projeto foi utilizado para estudo de funções, iterações, condições e demais pormenores do Python3.
+O seguinte projeto foi utilizado para estudo de funções, iterações, condições, testes e demais pormenores do Python3.
 
 O objetivo principal é implementar funções de um conjunto de dados sobre empregos. As implementações são incorporadas a uma aplicação web desenvolvida em Flask.
 
